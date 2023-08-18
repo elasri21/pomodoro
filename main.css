@@ -99,6 +99,8 @@ body {
   margin-bottom: 30px;
 }
 .screen .timer-box .content span {
+  position: relative;
+  z-index: 11;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -107,6 +109,34 @@ body {
 }
 .screen .timer-box .content span.continue {
   display: none;
+}
+.screen .timer-box svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 240px;
+  height: 240px;
+  transform: translate(-50%, -50%) rotateY(-180deg) rotateZ(-90deg);
+}
+.screen .timer-box svg circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  stroke-dasharray: 754px;
+  stroke-dashoffset: 0px;
+  stroke-linecap: round;
+  stroke-width: 4px;
+  stroke: #ed7054;
+  fill: none;
+}
+@keyframes countdown {
+  from {
+    stroke-dashoffset: 0px;
+  }
+  to {
+    stroke-dashoffset: 754px;
+  }
 }
 .screen .settings {
   text-align: center;
