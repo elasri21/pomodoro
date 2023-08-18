@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
+/*Variables*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: #04042f;
+  font-family: sans-serif;
+}
+
+.rad-20 {
+  border-radius: 20px;
+}
+
+.rad-50 {
+  border-radius: 50%;
+}
+
+.rad-4 {
+  border-radius: 6px;
+}
+
+.screen {
+  position: relative;
+  padding: 100px;
+}
+.screen h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: lowercase;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.screen .choose-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: fit-content;
+  margin: 0 auto 50px;
+  padding: 5px;
+  background-color: #060646;
+  border-radius: 30px;
+}
+.screen .choose-timer span {
+  display: block;
+  text-align: center;
+  text-transform: lowercase;
+  font-size: 16px;
+  font-weight: 400;
+  color: gray;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.screen .choose-timer span.active {
+  background-color: #ed7054;
+  color: #04042f;
+}
+.screen .timer-box {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto 50px;
+  background-color: #060646;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.screen .timer-box .content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  height: 200px;
+  width: 200px;
+  background-color: #04042f;
+  text-align: center;
+}
+.screen .timer-box .content .number {
+  font-size: 50px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 30px;
+}
+.screen .timer-box .content span {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #fff;
+  cursor: pointer;
+}
+.screen .timer-box .content span.continue {
+  display: none;
+}
+.screen .settings {
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+.screen .settings i {
+  font-size: 20px;
+  cursor: pointer;
+  color: gray;
+}
+.screen .settings-box {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+.screen .settings-box .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+.screen .settings-box .title h2 {
+  font-size: 18px;
+  text-transform: capitalize;
+  color: #04042f;
+}
+.screen .settings-box .title .x {
+  color: gray;
+  font-size: 16px;
+  cursor: pointer;
+}
+.screen .settings-box .setting-timers h3 {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  font-weight: 400;
+  color: #04042f;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.screen .settings-box .setting-timers .fields {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.screen .settings-box .setting-timers .fields > div {
+  width: fit-content;
+}
+.screen .settings-box .setting-timers .fields > div span {
+  display: block;
+  font-size: 13px;
+  text-transform: capitalize;
+  color: gray;
+  margin-bottom: 5px;
+}
+.screen .settings-box .setting-timers .fields > div input {
+  display: block;
+  width: 100%;
+  background-color: #ddd;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+}
+.screen .settings-box .choose-font {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.screen .settings-box .choose-font h3 {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #04042f;
+}
+.screen .settings-box .choose-font .fonts {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.screen .settings-box .choose-font .fonts span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #ddd;
+  color: #060646;
+  text-align: center;
+  cursor: pointer;
+}
+.screen .settings-box .choose-font .fonts span.active {
+  background-color: #04042f;
+  color: #fff;
+}
+.screen .settings-box .choose-color {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.screen .settings-box .choose-color h3 {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #04042f;
+}
+.screen .settings-box .choose-color .colors {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.screen .settings-box .choose-color .colors span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #ddd;
+  color: #060646;
+  text-align: center;
+  cursor: pointer;
+}
+.screen .settings-box .choose-color .colors span.red {
+  background-color: #ed7054;
+}
+.screen .settings-box .choose-color .colors span.cyan {
+  background-color: #6defef;
+}
+.screen .settings-box .choose-color .colors span.vio {
+  background-color: #ba62ba;
+}
+.screen .settings-box .choose-color .colors span i {
+  display: none;
+  font-size: 14px;
+  color: #04042f;
+}
+.screen .settings-box .choose-color .colors span.active i {
+  display: block;
+}
+.screen .settings-box .applay {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -18px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #ed7054;
+  padding: 10px 25px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=main.css.map */
