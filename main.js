@@ -8,6 +8,8 @@ const settingsBox = document.querySelector(".settings-box");
 const eksBtn = document.querySelector(".settings-box .x");
 const apply = document.querySelector(".applay");
 const circle = document.querySelector(".timer-box svg circle");
+const audio = document.querySelector(".bell audio");
+const closeTimer = document.querySelector(".bell .close-timer");
 gear.addEventListener("click", function () {
   settingsBox.style.display = "block";
 });
@@ -35,6 +37,8 @@ apply.addEventListener("click", function () {
     total--;
     if (total == -1) {
       clearInterval(tt);
+      audio.parentElement.style.display = "block";
+      audio.play();
     }
     circle.style.animation = `countdown ${dur}s linear 1 forwards`;
   }
@@ -81,4 +85,11 @@ fonts.forEach((font) => {
     document.body.style.fontFamily = this.dataset.font;
     this.classList.add("active");
   });
+});
+
+// close the timer
+closeTimer.addEventListener("click", function() {
+  this.parentElement.style.display = "none";
+  console.log("clicked");
+  audio.pause();
 });

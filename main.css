@@ -30,12 +30,17 @@ body {
 }
 
 .rad-4 {
-  border-radius: 6px;
+  border-radius: 4px;
 }
 
 .screen {
   position: relative;
-  padding: 100px;
+  padding: 100px 100px;
+}
+@media (max-width: 375px) {
+  .screen {
+    padding: 80px 50px !important;
+  }
 }
 .screen h1 {
   font-size: 24px;
@@ -49,6 +54,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 15px;
   width: fit-content;
   margin: 0 auto 50px;
@@ -158,6 +164,11 @@ body {
   border-radius: 10px;
   padding: 20px;
 }
+@media (max-width: 375px) {
+  .screen .settings-box {
+    width: 85%;
+  }
+}
 .screen .settings-box .title {
   display: flex;
   align-items: center;
@@ -190,6 +201,17 @@ body {
   justify-content: space-between;
   gap: 10px;
   margin-bottom: 30px;
+}
+@media (max-width: 375px) {
+  .screen .settings-box .setting-timers .fields {
+    flex-direction: column;
+  }
+  .screen .settings-box .setting-timers .fields > div {
+    width: 100% !important;
+  }
+  .screen .settings-box .setting-timers .fields > div span {
+    width: 100%;
+  }
 }
 .screen .settings-box .setting-timers .fields > div {
   width: fit-content;
@@ -299,6 +321,59 @@ body {
   background-color: #ed7054;
   padding: 10px 25px;
   cursor: pointer;
+}
+.screen .bell {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(128, 128, 128, 0.9);
+  z-index: 11111;
+}
+.screen .bell audio {
+  opacity: 0;
+}
+.screen .bell .close-timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #ed7054;
+}
+.screen .bell .close-timer::before {
+  content: "";
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid #ed7054;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  outline: 1px solid #ed7054;
+  animation: waves 2s linear infinite;
+}
+@keyframes waves {
+  100% {
+    outline-offset: 0;
+  }
+  20% {
+    outline-offset: 15px;
+  }
+  40% {
+    outline-offset: 30px;
+  }
+  60% {
+    outline-offset: 60px;
+  }
+  80% {
+    outline-offset: 100px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
