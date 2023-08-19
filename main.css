@@ -37,7 +37,7 @@ body {
   position: relative;
   padding: 100px 100px;
 }
-@media (max-width: 375px) {
+@media (max-width: 500px) {
   .screen {
     padding: 80px 50px !important;
   }
@@ -164,7 +164,7 @@ body {
   border-radius: 10px;
   padding: 20px;
 }
-@media (max-width: 375px) {
+@media (max-width: 500px) {
   .screen .settings-box {
     width: 85%;
   }
@@ -202,7 +202,7 @@ body {
   gap: 10px;
   margin-bottom: 30px;
 }
-@media (max-width: 375px) {
+@media (max-width: 500px) {
   .screen .settings-box .setting-timers .fields {
     flex-direction: column;
   }
